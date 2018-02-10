@@ -1,0 +1,13 @@
+---
+# configuration tasks for omtion
+
+- name: Create motion camera configurations
+  template:
+    src: "camera.conf.j2"
+    dest: "{{ motion_camera_dir }}/{{ item.name }}.conf"
+  with_items: motion_cameras
+
+- name: Create main Motion configuration.
+  template:
+    src: "motion.conf.j2"
+    dest: "{{ motion_config_file }}" 

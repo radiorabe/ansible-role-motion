@@ -1,0 +1,22 @@
+galaxy_info:
+  author: radiorabe
+  description: Motion video monitoring
+  company: Radio Bern RaBe
+
+  license: AGPLv3
+
+  min_ansible_version: 2.4
+
+  # If this a Container Enabled role, provide the minimum Ansible Container version.
+  min_ansible_container_version: 0.9.2
+
+  platforms:
+   - name: EL
+     versions:
+     - 7
+
+  galaxy_tags:
+    - container
+    - web
+    - video
+    - motion

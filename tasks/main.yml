@@ -1,0 +1,8 @@
+---
+# tasks file for motion
+
+- import_task: install.yml
+  when: motion_install
+
+- import_task: configure.yml
+  when: motion_configure

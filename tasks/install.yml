@@ -1,0 +1,13 @@
+---
+# install tasks for motion
+
+- name: Install motion package
+  package:
+    name: "{{ motion_package_name }}"
+    state: present
+
+- name: Purge yum cache
+  command: yum clean all
+  when:
+    - ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+    - ansible_env.ANSIBLE_CONTAINER is defined

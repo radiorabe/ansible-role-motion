@@ -1,0 +1,147 @@
+---
+# defaults file for motion
+
+motion_install: yes
+
+motion_package_name: motion
+
+motion_configure: yes
+
+motion_config_dir: /etc/motion
+motion_config_file: "{{ motion_config_dir }}/motion.conf"
+
+motion_process_id_file: /var/run/motion/motion.pid
+
+motion_logfile: ~
+# motion_logfile: /tmp/motion.log
+motion_log_level: 6
+motion_log_type: all
+
+motion_videodevice: /dev/video0
+motion_v4l_palette: 17
+motion_input: -1
+motion_norm: 0
+motion_frequency: 0
+motion_power_line_frequency: -1
+motion_rotate: 0
+motion_flip_axis: none
+motion_width: 320
+motion_height: 240
+motion_framerate: 2
+motion_minimum_frame_time: 0
+motion_netcam_url: ~
+motion_netcam_userpass: ~
+motion_netcam_keepalive: off
+motion_netcam_proxy: ~
+motion_netcam_tolerant_check: off
+motion_rtsp_uses_tcp: on
+motion_auto_brightness: off
+motion_brightness: 0
+motion_contrast: 0
+motion_saturation: 0
+motion_hue: 0
+
+motion_roundrobin_frames: 1
+motion_roundrobin_skip: 1
+motion_switchfilter: off
+
+motion_threshold: 1500
+motion_threshold_tune: off
+motion_noise_level: 32
+motion_noise_tune: on
+motion_despeckle_filter: EedDl
+
+motion_area_detect: ~
+motion_mask_file: ~
+motion_mask_privacy: ~
+motion_smart_mask_speed: 0
+motion_lightswitch: 0
+motion_minimum_motion_frames: 1
+
+motion_pre_capture: 0
+motion_post_capture: 0
+motion_event_gap: 60
+motion_max_movie_time: 0
+motion_emulate_motion: off
+
+motion_output_pictures: off
+motion_output_debug_pictures: off
+motion_quality: 75
+motion_picture_type: jpeg
+
+motion_ffmpeg_output_movies: on
+motion_ffmpeg_output_debug_movies: off
+motion_ffmpeg_bps: 400000
+motion_ffmpeg_variable_bitrate: 0
+motion_ffmpeg_video_codec: mkv
+motion_ffmpeg_duplicate_frames: "true"
+motion_timelapse_interval: 0
+motion_timelapse_mode: daily
+motion_timelapse_fps: 30
+motion_timelapse_codec: mpg
+
+motion_use_extpipe: off
+motion_extpipe: ~
+
+motion_snapshot_interval: 0
+
+motion_locate_motion_mode: off
+motion_locate_motion_style: box
+motion_text_right: "%Y-%m-%d\n%T-%q"
+motion_text_left: ~
+motion_text_changes: off
+motion_text_event: "%Y%m%d%H%M%S"
+motion_text_double: off
+
+motion_exif_text: ~
+
+motion_target_dir: ~
+motion_snapshot_filename: "%v-%Y%m%d%H%M%S-snapshot"
+motion_picture_filename: "%v-%Y%m%d%H%M%S-%q"
+motion_movie_filename: "%v-%Y%m%d%H%M%S"
+motion_timelapse_filename: "%Y%m%d-timelapse"
+
+motion_ipv6_enabled: off
+
+motion_stream_port: 8081
+motion_substream_port: ~
+motion_stream_quality: 50
+motion_stream_motion: off
+motion_stream_maxrate: 1
+motion_stream_localhost: on
+motion_stream_limit: 0
+motion_stream_auth_method: 0
+motion_stream_authentication: ~
+motion_stream_preview_scale: 25
+motion_stream_preview_newline: no
+
+motion_webcontrol_port: 8080
+motion_webcontrol_localhost: on
+motion_webcontrol_html_output: on
+motion_webcontrol_authentication: ~
+motion_webcontrol_parms: 0
+
+motion_quiet: on
+motion_on_event_start: ~
+motion_on_event_end: ~
+motion_on_picture_save: ~
+motion_on_motion_detected: ~
+motion_on_area_detected: ~
+motion_on_movie_start: ~
+motion_on_movie_end: ~
+motion_on_camera_lost: ~
+motion_on_camera_found: ~
+
+motion_camera_dir: "{{ motion_config_dir }}/conf.d"
+
+motion_cameras: []
+# - name: CAM1
+#   camera_id: 1
+#   videodevice: /dev/video0
+#   input: -1
+#   text_left: CAMERA 1
+#   target_dir: /tmp/motion/cam1
+#   picture_filename: CAM1_%v-%Y%m%d%H%M%S-%q
+#   stream_port: 8081
+#   on_picture_save: /usr/local/motion-extras/camparse2.pl
+#   on_movie_end: /usr/local/motion-extras/mpegparse2.pl
