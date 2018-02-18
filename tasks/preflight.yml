@@ -1,0 +1,10 @@
+---
+# preflight tasks for motion
+
+- name: Find motion package
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  yum:
+    list: "{{ motion_package_name }}"
+  register: motion_register_yumlist
+
+- debug: var="{{motion_register_yumlist}}"

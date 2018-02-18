@@ -43,6 +43,7 @@ configurable variables.
 
 | variable | required | default | comments |
 | -------- | -------- | ------- | -------- |
+| `motion_preflight` | no | `yes` | Set to no to disable preflight checking |
 | `motion_install` | no | `yes` | Set to `no` to disable installation of package |
 | `motion_package_name` | no | `motion` | |
 | `motion_configure` | no | `yes` | Set to `no` to disable configuration of motion package |

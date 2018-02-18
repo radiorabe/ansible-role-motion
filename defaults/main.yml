@@ -1,6 +1,8 @@
 ---
 # defaults file for motion
 
+motion_preflight: yes
+
 motion_install: yes
 
 motion_package_name: motion
