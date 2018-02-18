@@ -1,8 +1,11 @@
 ---
 # tasks file for motion
 
-- import_task: install.yml
+- import_tasks: preflight.yml
+  when: motion_preflight
+
+- import_tasks: install.yml
   when: motion_install
 
-- import_task: configure.yml
+- import_tasks: configure.yml
   when: motion_configure
