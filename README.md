@@ -38,7 +38,7 @@ $ ansible-container install <USERNAME.ROLE_NAME>
 ## Role Variables
 
 Motion has lots of templatable variables. Only the most important are mentioned
-here. Please check the [defaults(defaults/main.yml] for a complete listing of
+here. Please check the [defaults](defaults/main.yml) for a complete listing of
 configurable variables.
 
 | variable | required | default | comments |
