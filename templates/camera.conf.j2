@@ -15,7 +15,7 @@
 # Default: The order when the camera file was read
 {%- if item.camera_id %}
 camera_id = {{ item.camera_id }}
-{% end %}
+{% endif %}
 
 # Videodevice to be used for capturing  (default /dev/video0)
 # for FreeBSD default is /dev/bktr0 
@@ -49,7 +49,7 @@ text_left {{ item.text_left }}
 # Recommended to use absolute patch. (Default: current working directory)
 {%- if item.target_dir %}
 target_dir {{ motion_target_dir }}
-{% end -%}
+{% endif -%}
 
 # File path for motion triggered images (jpeg, ppm or webp) relative to target_dir
 # Default: %v-%Y%m%d%H%M%S-%q
@@ -72,10 +72,10 @@ stream_port {{ item.stream_port }}
 # The filename of the picture is appended as an argument for the command.
 {%- if item.on_picture_save %}
 on_picture_save {{ item.on_picture_save }}
-{% end -%}
+{% endif -%}
 
 # Command to be executed when a movie file (.mpg|.avi) is closed. (default: none)
 # Filename of movie is appended as an argument for the command.
 {%- if item.on_movie_end %}
 on_movie_end {{ item.on_movie_end }}
-{% end -%}
+{% endif -%}
