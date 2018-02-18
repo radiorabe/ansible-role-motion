@@ -1,9 +1,13 @@
 ---
 # preflight tasks for motion
 
-- name: Check if motion package is installable
+- name: Check if motion package and dependencies are installable
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  with_items:
+    - "{{ motion_package_name }}"
+    - "libavdevice"
+    - "ffmpeg-libs"
   yum:
-    list: "{{ motion_package_name }}"
+    list: "{{ item }}"
   register: motion_register_yumlist
   failed_when: motion_register_yumlist.results|length <= 0
