@@ -21,7 +21,7 @@ setup_mode off
 
 
 # Use a file to save logs messages, if not defined stderr and syslog is used. (default: not defined)
-{%- if motion_logfile %}
+{% if motion_logfile %}
 logfile {{ motion_logfile }}
 {% endif -%}
 
@@ -92,12 +92,12 @@ framerate {{ motion_framerate }}
 minimum_frame_time {{ motion_minimum_frame_time }}
 
 # Full Network Camera URL.  Valid Services: http:// ftp:// mjpg:// rtsp:// mjpeg:// file:// rtmp://
-{%- if motion_netcam_url %}
+{% if motion_netcam_url %}
 netcam_url {{ motion_netcam_url }}
 {% endif -%}
 
 # Username and password for network camera if required. Syntax is user:password
-{%- if motion_netcam_userpass %}
+{% if motion_netcam_userpass %}
 netcam_userpass {{ motion_netcam_userpass }}
 {% endif -%}
 
@@ -111,7 +111,7 @@ netcam_keepalive {{ motion_netcam_keepalive }}
 # URL to use for a netcam proxy server, if required, e.g. "http://myproxy".
 # If a port number other than 80 is needed, use "http://myproxy:1234".
 # Default: not defined
-{%- if motion_netcam_proxy %}
+{% if motion_netcam_proxy %}
 netcam_proxy {{ motion_netcam_proxy }}
 {% endif -%}
 
@@ -198,19 +198,19 @@ despeckle_filter {{ motion_despeckle_filter }}
 # detected in one of the given areas, but only once during an event.        7 8 9
 # One or more areas can be specified with this option. Take care: This option
 # does NOT restrict detection to these areas! (Default: not defined)
-{%- if motion_area_detect %}
+{% if motion_area_detect %}
 area_detect {{ motion_area_detect }}
 {% endif -%}
 
 # PGM file to use as a sensitivity mask.
 # Full path name to. (Default: not defined)
-{%- if motion_mask_file %}
+{% if motion_mask_file %}
 mask_file {{ motion_mask_file }}
 {% endif -%}
 
 # PGM file to completely mask out a area of image.
 # Full path name to. (Default: not defined)
-{%- if motion_mask_privacy %}
+{% if motion_mask_privacy %}
 mask_privacy {{ motion_mask_privacy }}
 {% endif -%}
 
@@ -326,7 +326,7 @@ use_extpipe {{ motion_use_extpipe }}
 
 # External program (full path and opts) to pipe raw video to
 # Generally, use '-' for STDIN...
-{%- if motion_extpipe %}
+{% if motion_extpipe %}
 extpipe {{ motion_extpipe }}
 {% endif -%}
 
@@ -373,7 +373,7 @@ text_right {{ motion_text_right }}
 # Draw a user defined text on the images using same options as C function strftime(3)
 # Default: Not defined = no text
 # Text is placed in lower left corner
-{%- if motion_text_left %}
+{% if motion_text_left %}
 text_left {{ motion_text_left }}
 {% endif -%}
 
@@ -397,7 +397,7 @@ text_double {{ motion_text_double }}
 # Text to include in a JPEG EXIF comment
 # May be any text, including conversion specifiers.
 # The EXIF timestamp is included independent of this text.
-{%- if motion_exif_text %}
+{% if motion_exif_text %}
 exif_text {{ motion_exif_text }}
 {% endif -%}
 
@@ -417,7 +417,7 @@ exif_text {{ motion_exif_text }}
 
 # Target base directory for pictures and films
 # Recommended to use absolute path. (Default: current working directory)
-{%- if motion_target_dir %}
+{% if motion_target_dir %}
 target_dir {{ motion_target_dir }}
 {% endif -%}
 
@@ -463,7 +463,7 @@ ipv6_enabled {{ motion_ipv6_enabled }}
 stream_port {{ motion_stream_port }}
 
 # 50% scaled down substream (default: 0 = disabled)
-{%- if motion_substream_port %}
+{% if motion_substream_port %}
 substream_port {{ motion_substream_port }}
 {% endif -%}
 
@@ -493,7 +493,7 @@ stream_auth_method {{ motion_stream_auth_method }}
 
 # Authentication for the stream. Syntax username:password
 # Default: not defined (Disabled)
-{%- if motion_stream_authentication %}
+{% if motion_stream_authentication %}
 stream_authentication {{ motion_stream_authentication }}
 {% endif -%}
 
@@ -521,7 +521,7 @@ webcontrol_html_output {{ motion_webcontrol_html_output }}
 
 # Authentication for the http based control. Syntax username:password
 # Default: not defined (Disabled)
-{%- if motion_webcontrol_authentication %}
+{% if motion_webcontrol_authentication %}
 webcontrol_authentication {{ motion_webcontrol_authentication }}
 {% endif -%}
 
@@ -622,42 +622,42 @@ quiet {{ motion_quiet }}
 
 # Command to be executed when an event starts. (default: none)
 # An event starts at first motion detected after a period of no motion defined by event_gap
-{%- if motion_on_event_start %}
+{% if motion_on_event_start %}
 on_event_start {{ motion_on_event_start }}
 {% endif -%}
 
 # Command to be executed when an event ends after a period of no motion
 # (default: none). The period of no motion is defined by option event_gap.
-{%- if motion_on_event_end %}
+{% if motion_on_event_end %}
 on_event_end {{ motion_on_event_end }}
 {% endif -%}
 
 # Command to be executed when a picture (.ppm|.jpg) is saved (default: none)
 # To give the filename as an argument to a command append it with %f
-{%- if motion_on_picture_save %}
+{% if motion_on_picture_save %}
 on_picture_save {{ motion_on_picture_save }}
 {% endif -%}
 
 # Command to be executed when a motion frame is detected (default: none)
-{%- if motion_on_motion_detected %}
+{% if motion_on_motion_detected %}
 on_motion_detected {{ motion_on_motion_detected }}
 {% endif -%}
 
 # Command to be executed when motion in a predefined area is detected
 # Check option 'area_detect'.   (default: none)
-{%- if motion_on_area_detected %}
+{% if motion_on_area_detected %}
 on_area_detected {{ motion_on_area_detected }}
 {% endif -%}
 
 # Command to be executed when a movie file (.mpg|.avi) is created. (default: none)
 # To give the filename as an argument to a command append it with %f
-{%- if motion_on_movie_start %}
+{% if motion_on_movie_start %}
 on_movie_start {{ motion_on_movie_start }}
 {% endif -%}
 
 # Command to be executed when a movie file (.mpg|.avi) is closed. (default: none)
 # To give the filename as an argument to a command append it with %f
-{%- if motion_on_movie_end %}
+{% if motion_on_movie_end %}
 on_movie_end {{ motion_on_movie_end }}
 {% endif -%}
 
@@ -665,13 +665,13 @@ on_movie_end {{ motion_on_movie_end }}
 # NOTE: There is situations when motion don't detect a lost camera!
 # It depends on the driver, some drivers dosn't detect a lost camera at all
 # Some hangs the motion thread. Some even hangs the PC! (default: none)
-{%- if motion_on_camera_lost %}
+{% if motion_on_camera_lost %}
 on_camera_lost {{ motion_on_camera_lost }}
 {% endif -%}
 
 # Command to be executed when a camera that was lost has been found (default: none)
 # NOTE: If motion doesn't properly detect a lost camera, it also won't know it found one.
-{%- if motion_on_camera_found %}
+{% if motion_on_camera_found %}
 on_camera_found {{ motion_on_camera_found }}
 {% endif -%}
 
@@ -779,6 +779,6 @@ on_camera_found {{ motion_on_camera_found }}
 # as a camera config file.
 ##############################################################
 
-{%- if motion_camera_dir %}
+{% if motion_camera_dir %}
 camera_dir {{ motion_camera_dir }}
 {% endif -%}

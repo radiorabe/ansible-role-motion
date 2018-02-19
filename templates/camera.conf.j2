@@ -13,7 +13,7 @@
 # Consistent identification number to assign to each camera across multiple
 # invocations of Motion.
 # Default: The order when the camera file was read
-{%- if item.camera_id %}
+{% if item.camera_id %}
 camera_id = {{ item.camera_id }}
 {% endif %}
 
@@ -47,7 +47,7 @@ text_left {{ item.text_left }}
 
 # Target base directory for pictures and films
 # Recommended to use absolute patch. (Default: current working directory)
-{%- if item.target_dir %}
+{% if item.target_dir %}
 target_dir {{ motion_target_dir }}
 {% endif -%}
 
@@ -70,12 +70,12 @@ stream_port {{ item.stream_port }}
 
 # Command to be executed when a picture (.ppm|.jpg|.webp) is saved (default: none)
 # The filename of the picture is appended as an argument for the command.
-{%- if item.on_picture_save %}
+{% if item.on_picture_save %}
 on_picture_save {{ item.on_picture_save }}
 {% endif -%}
 
 # Command to be executed when a movie file (.mpg|.avi) is closed. (default: none)
 # Filename of movie is appended as an argument for the command.
-{%- if item.on_movie_end %}
+{% if item.on_movie_end %}
 on_movie_end {{ item.on_movie_end }}
 {% endif -%}
